@@ -17,13 +17,13 @@ class Flower:
         self.water_requirements = water_requirements
         self.is_happy = False
 
-    def water(self, quantity: int):
+    def water(self, quantity: int) -> None:
         if quantity >= self.water_requirements:
             self.is_happy = True
         else:
             self.is_happy = False
 
-    def status(self):
+    def status(self) -> str:
         if self.is_happy:
             return f"{self.name} is happy"
         return f"{self.name} is not happy"
