@@ -13,3 +13,6 @@ https://judge.softuni.org/
 
 ## Table of content:
 - [First Steps in OOP](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/first_steps_in_oop)
+- [Classes and Objects](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/classes_and_objects)
+- [Inheritance](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/inheritance)
+- [Encapsulation](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/encapsulation)
