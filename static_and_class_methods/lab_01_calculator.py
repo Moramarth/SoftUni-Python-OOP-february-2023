@@ -1,0 +1,27 @@
+"""
+Create a class called Calculator that has the following static methods:
+•	add(*args) - sums all the arguments passed to the function and returns the result
+•	multiply(*args) - multiplies all the numbers and returns the result
+•	divide(*args) - divides all the numbers (starting from the first one) and returns the result
+•	subtract(*args) - subtracts all the numbers (starting from the first one) and returns the result
+"""
+from functools import reduce
+
+
+class Calculator:
+
+    @staticmethod
+    def add(*numbers):
+        return sum(numbers)
+
+    @staticmethod
+    def multiply(*numbers):
+        return reduce(lambda a, b: a * b, numbers)
+
+    @staticmethod
+    def divide(*numbers):
+        return reduce(lambda a, b: a + b if a == 0 or b == 0 else a / b, numbers)
+
+    @staticmethod
+    def subtract(*numbers):
+        return reduce(lambda a, b: a - b, numbers)
