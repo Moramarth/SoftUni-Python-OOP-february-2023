@@ -16,3 +16,4 @@ https://judge.softuni.org/
 - [Classes and Objects](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/classes_and_objects)
 - [Inheritance](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/inheritance)
 - [Encapsulation](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/encapsulation)
+- [Static and Class Methods](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/static_and_class_methods)
