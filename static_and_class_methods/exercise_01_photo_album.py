@@ -1,5 +1,6 @@
 """
 Create a class called PhotoAlbum. Upon initialization, it should receive pages (int). It should also have one more
+attribute: photos (empty matrix) representing the album with its pages where you should put the photos. Each page can
 contain only 4 photos. The class should also have 3 more methods:
 
 •	from_photos_count(photos_count: int) - creates a new instance of PhotoAlbum. Note: Each page can contain 4 photos.
