@@ -27,4 +27,4 @@ class Document:
 
     def __repr__(self):
         return f"Document {self.id}: {self.file_name}; category {self.category_id}, topic {self.topic_id}," \
-               f" tags: {', '.join(tag for tag in self.tags)}"
+               f" tags: {', '.join(self.tags)}"

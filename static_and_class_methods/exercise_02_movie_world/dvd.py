@@ -1,3 +1,5 @@
+from calendar import month_name
+
 class DVD:
     def __init__(self, name: str, dvd_id: int, creation_year: int, creation_month: str, age_restriction: int):
         self.name = name
@@ -10,11 +12,8 @@ class DVD:
     @classmethod
     def from_date(cls, dvd_id: int, name: str, date: str, age_restriction: int):
         day, month, year = date.split(".")
-        months = ["January", "February", "March", "April", "May", "June",
-                  "July", "August", "September", "October", "November", "December"]
-        month = months[int(month) - 1]
 
-        return cls(name, dvd_id, int(year), month, age_restriction)
+        return cls(name, dvd_id, int(year), month_name[int(month)], age_restriction)
 
     def __repr__(self):
         return f"{self.id}: {self.name} ({self.creation_month} {self.creation_year}) has age restriction" \
