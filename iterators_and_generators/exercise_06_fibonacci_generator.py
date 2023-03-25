@@ -6,12 +6,8 @@ current number with the previous one.
 
 
 def fibonacci():
-    yield 0
+    first_number, second_number = 0, 1
 
-    yield 1
-    current = 1
-    previous = 0
     while True:
-        yield current + previous
-        current = current + previous
-        previous = current - previous
+        yield first_number
+        first_number, second_number = second_number, first_number + second_number
