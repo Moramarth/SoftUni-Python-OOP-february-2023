@@ -19,3 +19,4 @@ https://judge.softuni.org/
 - [Static and Class Methods](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/static_and_class_methods)
 - [Polymorphism and Abstraction](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/polymorphism_and_abstraction)
 - [SOLID](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/SOLID)
+- [Iterators and Generators](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/iterators_and_generators)
