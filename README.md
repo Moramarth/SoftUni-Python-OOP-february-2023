@@ -20,3 +20,4 @@ https://judge.softuni.org/
 - [Polymorphism and Abstraction](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/polymorphism_and_abstraction)
 - [SOLID](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/SOLID)
 - [Iterators and Generators](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/iterators_and_generators)
+- [Decorators](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/decorators)
