@@ -22,3 +22,5 @@ https://judge.softuni.org/
 - [Iterators and Generators](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/iterators_and_generators)
 - [Decorators](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/decorators)
 - [Testing](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/testing)
+- [Exam preparation](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/exam_preparation)
+  * [Python OOP Retake Exam - 19 December 2022](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/exam_preparation/python_oop_retake_exam_19_december_2022)
