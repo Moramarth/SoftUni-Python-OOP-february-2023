@@ -24,3 +24,4 @@ https://judge.softuni.org/
 - [Testing](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/testing)
 - [Exam preparation](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/exam_preparation)
   * [Python OOP Retake Exam - 19 December 2022](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/exam_preparation/python_oop_retake_exam_19_december_2022)
+  * [Python OOP Exam - 10 December 2022](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/exam_preparation/python_oop_exam_10_december_2022)
