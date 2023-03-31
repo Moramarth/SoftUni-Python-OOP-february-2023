@@ -5,20 +5,20 @@ from exam_preparation.python_oop_exam_10_december_2022.christmas_party_shop.deli
 
 
 class ChristmasPastryShopApp:
-    _valid_delicacy_types = ("Gingerbread", "Stolen")
 
     def __init__(self):
         self.booths = list()
         self.delicacies = list()
         self.income = 0
 
-    def delicacy_name_validator(self, name):
-        for delicacy in self.delicacies:
-            if delicacy.name == name:
-                return delicacy
+    @staticmethod
+    def attribute_collection_search(value, attribute, collection):
+        for item in collection:
+            if getattr(item, attribute) == value:
+                return item
 
     def add_delicacy(self, type_delicacy: str, name: str, price: float):
-        if self.delicacy_name_validator(name):
+        if self.attribute_collection_search(name, "name", self.delicacies):
             raise Exception(f"{name} already exists!")
 
         if type_delicacy == "Gingerbread":
@@ -31,14 +31,9 @@ class ChristmasPastryShopApp:
         self.delicacies.append(new_delicacy)
         return f"Added delicacy {name} - {type_delicacy} to the pastry shop."
 
-    def booth_number_validator(self, booth_number):
-        for booth in self.booths:
-            if booth.booth_number == booth_number:
-                return booth
-
     def add_booth(self, type_booth: str, booth_number: int, capacity: int):
 
-        if self.booth_number_validator(booth_number):
+        if self.attribute_collection_search(booth_number, "booth_number", self.booths):
             raise Exception(f"Booth number {booth_number} already exists!")
 
         if type_booth == "Open Booth":
@@ -61,11 +56,11 @@ class ChristmasPastryShopApp:
         raise Exception(f"No available booth for {number_of_people} people!")
 
     def order_delicacy(self, booth_number: int, delicacy_name: str):
-        booth = self.booth_number_validator(booth_number)
+        booth = self.attribute_collection_search(booth_number, "booth_number", self.booths)
         if not booth:
             raise Exception(f"Could not find booth {booth_number}!")
 
-        delicacy = self.delicacy_name_validator(delicacy_name)
+        delicacy = self.attribute_collection_search(delicacy_name, "name", self.delicacies)
         if not delicacy:
             raise Exception(f"No {delicacy_name} in the pastry shop!")
 
@@ -73,7 +68,7 @@ class ChristmasPastryShopApp:
         return f"Booth {booth_number} ordered {delicacy_name}."
 
     def leave_booth(self, booth_number: int):
-        booth = self.booth_number_validator(booth_number)
+        booth = self.attribute_collection_search(booth_number, "booth_number", self.booths)
         bill = booth.price_for_reservation + sum(delicacy.price for delicacy in booth.delicacy_orders)
         booth.delicacy_orders.clear()
         booth.is_reserved = False
