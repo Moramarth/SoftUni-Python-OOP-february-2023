@@ -1,4 +1,4 @@
-from movie_app.movie_specification.movie import Movie
+from exam_preparation.python_oop_retake_exam_18_april_2022.movie_app.movie_specification.movie import Movie
 
 
 class Thriller(Movie):

@@ -1,4 +1,4 @@
-from plantation.plantation import Plantation
+from exam_preparation.python_oop_retake_exam_18_april_2022.plantation.plantation import Plantation
 from unittest import TestCase, main
 
 
