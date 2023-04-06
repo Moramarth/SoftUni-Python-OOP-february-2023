@@ -33,3 +33,4 @@ https://judge.softuni.org/
   * [Python OOP Retake Exam - 23 August 2021](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/exam_preparation/python_oop_retake_exam_23_august_2021)
   * [Python OOP Exam - 15 August 2021](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/exam_preparation/python_oop_exam_15_august_2021)
   * [Python OOP Exam - 10 April 2021](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/exam_preparation/python_oop_exam_10_april_2021)
+  * [Python OOP Retake Exam - 22 Aug 2020](https://github.com/Moramarth/SoftUni-Python-OOP-february-2023/tree/main/exam_preparation/python_oop_retake_exam_22_august_2020)
