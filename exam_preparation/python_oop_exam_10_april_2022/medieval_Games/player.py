@@ -1,3 +1,6 @@
+from exam_preparation.python_oop_exam_10_april_2022.medieval_games.supply.supply import Supply
+
+
 class Player:
     __used_names = list()
 

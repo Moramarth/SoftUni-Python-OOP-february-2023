@@ -1,8 +1,3 @@
-from medieval_Games.player import Player
-from medieval_Games.supply.drink import Drink
-from medieval_Games.supply.food import Food
-
-
 class Controller:
     def __init__(self):
         self.players = list()
@@ -15,9 +10,13 @@ class Controller:
                 return item
 
     def add_player(self, *players):
-        can_be_added = [player for player in players if player not in self.players]
-        self.players.extend(can_be_added)
-        return f"Successfully added: {', '.join(player.name for player in can_be_added)}"
+        added_player_names = list()
+        for player in players:
+            if player not in self.players:
+                self.players.append(player)
+                added_player_names.append(player.name)
+
+        return f"Successfully added: {', '.join(added_player_names)}"
 
     def add_supply(self, *supplies):
         self.supplies.extend(list(supplies))
@@ -44,8 +43,7 @@ class Controller:
 
         for i in range(len(self.supplies) - 1, -1, -1):
             if sustenance_type == self.supplies[i].__class__.__name__:
-                supply_to_use = self.supplies[i]
-                self.supplies.pop(i)
+                supply_to_use = self.supplies.pop(i)
                 break
 
         if player.stamina + supply_to_use.energy > 100:
@@ -68,12 +66,7 @@ class Controller:
         if duel_cannot_start:
             return "\n".join(duel_cannot_start)
 
-        if player_one.stamina > player_two.stamina:
-            first_to_attack = player_two
-        else:
-            first_to_attack = player_one
-
-        if first_to_attack == player_one:
+        if player_one.stamina < player_two.stamina:
             player_two.stamina -= player_one.stamina / 2
             if player_one.stamina - player_two.stamina / 2 <= 0:
                 player_one.stamina = 0
@@ -93,15 +86,13 @@ class Controller:
 
     def next_day(self):
         for player in self.players:
-            if player.stamina - player.age * 2 <= 0:
+            if player.stamina - (player.age * 2) < 0:
                 player.stamina = 0
             else:
                 player.stamina -= player.age * 2
 
         for player in self.players:
             self.sustain(player.name, "Food")
-
-        for player in self.players:
             self.sustain(player.name, "Drink")
 
     def __str__(self):
@@ -109,23 +100,3 @@ class Controller:
         output.extend([str(player) for player in self.players])
         output.extend([supply.details() for supply in self.supplies])
         return "\n".join(output)
-
-
-# controller = Controller()
-# apple = Food("apple", 22)
-# cheese = Food("cheese")
-# juice = Drink("orange juice")
-# water = Drink("water")
-# first_player = Player('Peter', 15)
-# second_player = Player('Lilly', 12, 94)
-# print(controller.add_supply(cheese, apple, cheese, apple, juice, water, water))
-# print(controller.add_player(first_player, second_player))
-# print(controller.duel("Peter", "Lilly"))
-# print(controller.add_player(first_player))
-# print(controller.sustain("Lilly", "Drink"))
-# first_player.stamina = 0
-# print(controller.duel("Peter", "Lilly"))
-# print(first_player)
-# print(second_player)
-# controller.next_day()
-# print(controller)

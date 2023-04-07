@@ -1,7 +1,7 @@
-from christmas_races.car.muscle_car import MuscleCar
-from christmas_races.car.sports_car import SportsCar
-from christmas_races.driver import Driver
-from christmas_races.race import Race
+from exam_preparation.python_oop_exam_11_december_2021.christmas_races.car.muscle_car import MuscleCar
+from exam_preparation.python_oop_exam_11_december_2021.christmas_races.car.sports_car import SportsCar
+from exam_preparation.python_oop_exam_11_december_2021.christmas_races.driver import Driver
+from exam_preparation.python_oop_exam_11_december_2021.christmas_races.race import Race
 
 
 class Controller:
@@ -17,17 +17,14 @@ class Controller:
                 return item
 
     def create_car(self, car_type: str, model: str, speed_limit: int):
+        type_of_cars = {"MuscleCar": MuscleCar, "SportsCar": SportsCar}
+
         if self.attribute_collection_search(model, "model", self.cars):
             raise Exception(f"Car {model} is already created!")
 
-        if car_type == "MuscleCar":
-            self.cars.append(MuscleCar(model, speed_limit))
-        elif car_type == "SportsCar":
-            self.cars.append(SportsCar(model, speed_limit))
-        else:
-            return
-
-        return f"{car_type} {model} is created."
+        if car_type in type_of_cars:
+            self.cars.append(type_of_cars[car_type](model, speed_limit))
+            return f"{car_type} {model} is created."
 
     def create_driver(self, driver_name: str):
         if self.attribute_collection_search(driver_name, "name", self.drivers):
@@ -38,6 +35,7 @@ class Controller:
     def create_race(self, race_name: str):
         if self.attribute_collection_search(race_name, "name", self.races):
             raise Exception(f"Race {race_name} is already created!")
+
         self.races.append(Race(race_name))
         return f"Race {race_name} is created."
 
@@ -96,6 +94,9 @@ class Controller:
 
     def start_race(self, race_name: str):
         race = self.attribute_collection_search(race_name, "name", self.races)
+        if not race:
+            raise Exception(f"Race {race_name} could not be found!")
+
         if len(race.drivers) < 3:
             raise Exception(f"Race {race_name} cannot start with less than 3 participants!")
 
@@ -112,26 +113,3 @@ class Controller:
             result.append(f"Driver {driver.name} wins the {race_name} race with a speed of {driver.car.speed_limit}.")
 
         return "\n".join(result)
-
-
-controller = Controller()
-print(controller.create_driver("Peter"))
-print(controller.create_car("SportsCar", "Porsche 718 Boxster", 470))
-print(controller.add_car_to_driver("Peter", "SportsCar"))
-print(controller.create_car("SportsCar", "Porsche 911", 580))
-print(controller.add_car_to_driver("Peter", "SportsCar"))
-print(controller.create_car("MuscleCar", "BMW ALPINA B7", 290))
-print(controller.create_car("MuscleCar", "Mercedes-Benz AMG GLA 45", 420))
-print(controller.create_driver("John"))
-print(controller.create_driver("Jack"))
-print(controller.create_driver("Kelly"))
-print(controller.add_car_to_driver("Kelly", "MuscleCar"))
-print(controller.add_car_to_driver("Jack", "MuscleCar"))
-print(controller.add_car_to_driver("John", "SportsCar"))
-print(controller.create_race("Christmas Top Racers"))
-print(controller.add_driver_to_race("Christmas Top Racers", "John"))
-print(controller.add_driver_to_race("Christmas Top Racers", "Jack"))
-print(controller.add_driver_to_race("Christmas Top Racers", "Kelly"))
-print(controller.add_driver_to_race("Christmas Top Racers", "Peter"))
-print(controller.start_race("Christmas Top Racers"))
-[print(d.name, d.number_of_wins) for d in controller.drivers]

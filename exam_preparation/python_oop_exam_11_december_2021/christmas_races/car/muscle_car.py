@@ -1,4 +1,4 @@
-from christmas_races.car.car import Car
+from exam_preparation.python_oop_exam_11_december_2021.christmas_races.car.car import Car
 
 
 class MuscleCar(Car):

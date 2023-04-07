@@ -1,5 +1,5 @@
-from movie.movie import Movie
 from unittest import TestCase, main
+from exam_preparation.python_oop_exam_10_april_2022.movie.movie import Movie
 
 
 class MovieTests(TestCase):

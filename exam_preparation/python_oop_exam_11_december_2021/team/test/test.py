@@ -1,12 +1,11 @@
-from project.team import Team
 from unittest import TestCase, main
+from exam_preparation.python_oop_exam_11_december_2021.team.project.team import Team
 
 
 class TeamTests(TestCase):
     def setUp(self) -> None:
         self.team = Team("Team")
         self.other = Team("Other")
-
 
     def test_constructor(self):
         self.assertEqual("Team", self.team.name)
