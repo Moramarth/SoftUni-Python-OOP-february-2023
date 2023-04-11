@@ -8,7 +8,7 @@ You can try the tasks yourself via the online judge system:
 
 https://judge.softuni.org/
 
-![Soft Uni emblem](https://user-images.githubusercontent.com/122516587/212410967-a4c99491-17b3-4298-9205-6cbfb391cba4.png)
+![Soft Uni emblem](https://user-images.githubusercontent.com/122516587/212410967-a4c99491-17b3-4298-9205-6cbfb391cba4.png) <img src=https://user-images.githubusercontent.com/122516587/231049807-080a3551-814a-44ac-b1ca-ea1e5fd4eaeb.jpg width="350" height="450">
 
 
 ## Table of content:
